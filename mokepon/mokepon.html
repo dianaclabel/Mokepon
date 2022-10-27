@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mokepon</title>
+    <!--el punto representa que el archivo nuevo o el que buscamos esta en la misma carpeta  que este archivo-->
+    <script src="./js/mokepon.js"></script>
   </head>
   <body>
     <h1>MOKEPON 🔥💧🌱</h1>
@@ -14,24 +16,25 @@
       <!--en este input  debemos ponerle un atributo name para encapsularlo en un grupo "mascota"-->
       <label for="hipodoge">Hipodoge</label>
       <input type="radio" name="mascota" id="hipodoge" />
+
       <label for="capipepo">Capipepo</label>
       <input type="radio" name="mascota" id="capipepo" />
+
       <label for="ratigueya">Ratigueya</label>
       <input type="radio" name="mascota" id="ratigueya" />
 
-      Hipodoge -> Agua Capipepo -> Tierra Ratigueya-> Fuego Langostelvis -> Agua
-      y Fuego Tucapalma -> Agua y Tierra Pydos -> Tierra y fuego
-      <button>Seleccionar</button>
+      <button id="boton-mascota">Seleccionar</button>
     </section>
+
     <section id="selccionar-ataque">
       <h2>Elige tu ataque:</h2>
 
       <p>Tu mascota tiene <span>3</span> vidas</p>
       <p>La mascota del enemigo tiene <span>3</span> vidas</p>
       <p>
-        <button>Fuego 🔥</button>
-        <button>Agua 💧</button>
-        <button>Tierra 🌱</button>
+        <button id="boton-fuego">Fuego 🔥</button>
+        <button id="boton-agua">Agua 💧</button>
+        <button id="boton-tierra">Tierra 🌱</button>
       </p>
     </section>
 
@@ -42,9 +45,8 @@
       </p>
     </section>
     <section id="reiniciar">
-      <button>Reiniciar</button>
+      <button id="boton-reiniciar">Reiniciar</button>
     </section>
-
     <!--el codigo basico se llma el andamio o el scaffolding-->
   </body>
 </html>
