@@ -1,6 +1,17 @@
+let ataqueJugador;
+let ataqueEnemigo;
+let resultado;
+
 function iniciarJuego() {
   let botonMascotaJugador = document.getElementById("boton-mascota");
   botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
+
+  let botonFuego = document.getElementById("boton-fuego");
+  botonFuego.addEventListener("click", ataqueFuego);
+  let botonAgua = document.getElementById("boton-agua");
+  botonAgua.addEventListener("click", ataqueAgua);
+  let botonTierra = document.getElementById("boton-tierra");
+  botonTierra.addEventListener("click", ataqueTierra);
 }
 
 function seleccionarMascotaJugador() {
@@ -29,14 +40,73 @@ function seleccionarMascotaJugador() {
 
 function seleccionarMascotaEnemigo() {
   let spanMascotaEnemigo = document.getElementById("mascota-enemigo");
-  let ataqueAleatorio = aleatorio(1, 3);
+  let mascotaAleatorio = aleatorio(1, 3);
 
-  if (ataqueAleatorio === 1) {
+  if (mascotaAleatorio === 1) {
     spanMascotaEnemigo.innerHTML = "Hipodoge";
-  } else if (ataqueAleatorio === 2) {
+  } else if (mascotaAleatorio === 2) {
     spanMascotaEnemigo.innerHTML = "Capipepo";
   } else {
     spanMascotaEnemigo.innerHTML = "ratigueya";
+  }
+}
+
+function ataqueFuego() {
+  ataqueJugador = "Fuego";
+
+  ataqueEnemigoAleatorio();
+}
+
+function ataqueAgua() {
+  ataqueJugador = "Agua";
+
+  ataqueEnemigoAleatorio();
+}
+
+function ataqueTierra() {
+  ataqueJugador = "Tierra";
+
+  ataqueEnemigoAleatorio();
+}
+
+function ataqueEnemigoAleatorio() {
+  let ataqueAleatorio = aleatorio(1, 3);
+  if (ataqueAleatorio === 1) {
+    ataqueEnemigo = "Fuego";
+  } else if (ataqueAleatorio === 2) {
+    ataqueEnemigo = "Agua";
+  } else {
+    ataqueEnemigo = "Tierra";
+  }
+
+  combate(ataqueJugador, ataqueEnemigo);
+  crearMensaje();
+}
+
+function crearMensaje() {
+  let seccionMensaje = document.getElementById("mensajes");
+  let parrafo = document.createElement("P");
+  parrafo.innerHTML =
+    "Tu mascota atacó con " +
+    ataqueJugador +
+    ", la mascota del enemigo ataco con " +
+    ataqueEnemigo +
+    " " +
+    resultado;
+  seccionMensaje.appendChild(parrafo);
+}
+
+function combate(ataqueJugador, ataqueEnemigo) {
+  if (ataqueJugador === ataqueEnemigo) {
+    resultado = "EMPATE";
+  } else if (ataqueJugador === "Fuego" && ataqueEnemigo === "Tierra") {
+    resultado = "Ganaste";
+  } else if (ataqueJugador === "Agua" && ataqueEnemigo === "Fuego") {
+    resultado = "Ganaste";
+  } else if (ataqueJugador === "Tierra" && ataqueEnemigo === "Agua") {
+    resultado = "Ganaste";
+  } else {
+    resultado = "Perdiste";
   }
 }
 
