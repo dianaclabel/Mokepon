@@ -13,6 +13,9 @@ function iniciarJuego() {
   botonAgua.addEventListener("click", ataqueAgua);
   let botonTierra = document.getElementById("boton-tierra");
   botonTierra.addEventListener("click", ataqueTierra);
+
+  let btnReiniciar = document.getElementById("boton-reiniciar");
+  btnReiniciar.addEventListener("click", reiniciar);
 }
 
 function seleccionarMascotaJugador() {
@@ -124,17 +127,34 @@ function combate(ataqueJugador, ataqueEnemigo) {
 
 function revisarVidas() {
   if (vidasEnemigo == 0) {
-    let seccionMensaje = document.getElementById("mensajes");
-    let parrafo = document.createElement("P");
-    parrafo.innerHTML = "FELICITACIONES, GANASTE 🎊";
-    seccionMensaje.appendChild(parrafo);
+    crearMensajeFinal("FELICITACIONES! Ganaste :)");
   } else if (vidasJugador == 0) {
-    let seccionMensaje = document.getElementById("mensajes");
-    let parrafo = document.createElement("P");
-    parrafo.innerHTML = "INTENTALO OTRA VEZ, PERDISTE 🥺";
-    seccionMensaje.appendChild(parrafo);
+    crearMensajeFinal("Lo siento, perdiste :(");
   }
 }
+
+function crearMensajeFinal(resultadoFinal) {
+  let sectionMensajes = document.getElementById("mensajes");
+
+  let parrafo = document.createElement("p");
+  parrafo.innerHTML = resultadoFinal;
+
+  sectionMensajes.appendChild(parrafo);
+
+  //disabled hara que los botones no hagan la funcion se bloqueara y pondra los botones transparente
+
+  let botonFuego = document.getElementById("boton-fuego");
+  botonFuego.disabled = true;
+  let botonAgua = document.getElementById("boton-agua");
+  botonAgua.disabled = true;
+  let botonTierra = document.getElementById("boton-tierra");
+  botonTierra.disabled = true;
+}
+
+function reiniciar() {
+  location.reload();
+}
+
 function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
