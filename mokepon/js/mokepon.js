@@ -1,6 +1,7 @@
 let ataqueJugador;
 let ataqueEnemigo;
-let resultado;
+let vidasJugador = 3;
+let vidasEnemigo = 3;
 
 function iniciarJuego() {
   let botonMascotaJugador = document.getElementById("boton-mascota");
@@ -80,10 +81,9 @@ function ataqueEnemigoAleatorio() {
   }
 
   combate(ataqueJugador, ataqueEnemigo);
-  crearMensaje();
 }
 
-function crearMensaje() {
+function crearMensaje(mensaje) {
   let seccionMensaje = document.getElementById("mensajes");
   let parrafo = document.createElement("P");
   parrafo.innerHTML =
@@ -92,24 +92,49 @@ function crearMensaje() {
     ", la mascota del enemigo ataco con " +
     ataqueEnemigo +
     " " +
-    resultado;
+    mensaje;
   seccionMensaje.appendChild(parrafo);
 }
 
 function combate(ataqueJugador, ataqueEnemigo) {
+  let spanVidasJugador = document.getElementById("vidas-jugador");
+  let spanVidasEnemigo = document.getElementById("vidas-enemigo");
+
   if (ataqueJugador === ataqueEnemigo) {
-    resultado = "EMPATE";
+    crearMensaje("EMPATE");
   } else if (ataqueJugador === "Fuego" && ataqueEnemigo === "Tierra") {
-    resultado = "Ganaste";
+    crearMensaje("GANASTE");
+    vidasEnemigo--;
+    spanVidasEnemigo.innerHTML = vidasEnemigo;
   } else if (ataqueJugador === "Agua" && ataqueEnemigo === "Fuego") {
-    resultado = "Ganaste";
+    crearMensaje("GANASTE");
+    vidasEnemigo--;
+    spanVidasEnemigo.innerHTML = vidasEnemigo;
   } else if (ataqueJugador === "Tierra" && ataqueEnemigo === "Agua") {
-    resultado = "Ganaste";
+    crearMensaje("GANASTE");
+    vidasEnemigo--;
+    spanVidasEnemigo.innerHTML = vidasEnemigo;
   } else {
-    resultado = "Perdiste";
+    crearMensaje("PERDISTE");
+    vidasJugador--;
+    spanVidasJugador.innerHTML = vidasJugador;
   }
+  revisarVidas();
 }
 
+function revisarVidas() {
+  if (vidasEnemigo == 0) {
+    let seccionMensaje = document.getElementById("mensajes");
+    let parrafo = document.createElement("P");
+    parrafo.innerHTML = "FELICITACIONES, GANASTE 🎊";
+    seccionMensaje.appendChild(parrafo);
+  } else if (vidasJugador == 0) {
+    let seccionMensaje = document.getElementById("mensajes");
+    let parrafo = document.createElement("P");
+    parrafo.innerHTML = "INTENTALO OTRA VEZ, PERDISTE 🥺";
+    seccionMensaje.appendChild(parrafo);
+  }
+}
 function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
