@@ -18,7 +18,7 @@ function iniciarJuego() {
   botonTierra.addEventListener("click", ataqueTierra);
 
   let btnReiniciar = document.getElementById("boton-reiniciar");
-  btnReiniciar.addEventListener("click", reiniciar);
+  btnReiniciar.style.display = "none";
 }
 
 function seleccionarMascotaJugador() {
@@ -161,6 +161,11 @@ function crearMensajeFinal(resultadoFinal) {
   botonAgua.disabled = true;
   let botonTierra = document.getElementById("boton-tierra");
   botonTierra.disabled = true;
+
+  let btnReiniciar = document.getElementById("boton-reiniciar");
+
+  btnReiniciar.style.display = "block";
+  btnReiniciar.addEventListener("click", reiniciar);
 }
 
 function reiniciar() {
