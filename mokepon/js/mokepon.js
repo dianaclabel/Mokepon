@@ -4,6 +4,9 @@ let vidasJugador = 3;
 let vidasEnemigo = 3;
 
 function iniciarJuego() {
+  let setcionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
+  setcionSeleccionarAtaque.style.display = "none";
+
   let botonMascotaJugador = document.getElementById("boton-mascota");
   botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
 
@@ -33,11 +36,20 @@ function seleccionarMascotaJugador() {
   } else if (inputRatigueya.checked) {
     spanMascotaJugador.innerHTML = "Ratigueya";
   } else {
-    alert("Seleccione una alternativa");
+    alert("Debe seleccionar una alternativa");
     seleccionHecha = false;
   }
 
   if (seleccionHecha) {
+    let setcionSeleccionarMascota = document.getElementById(
+      "seleccionar-mascota"
+    );
+    setcionSeleccionarMascota.style.display = "none";
+
+    let setcionSeleccionarAtaque =
+      document.getElementById("seleccionar-ataque");
+    setcionSeleccionarAtaque.style.display = "block";
+
     seleccionarMascotaEnemigo();
   }
 }
