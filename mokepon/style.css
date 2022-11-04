@@ -1,27 +1,61 @@
-#titulo {
-  color: hotpink;
-  width: 310px;
-  height: 50px;
-  background-color: teal;
+body {
+  background-image: url("./assets/imagen/fondo-kwai.jpg");
 }
 
-#seleccionar-mascota {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.titulo,
+.subtitulo {
+  padding: 20px;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 45px;
+}
+
+.subtitulo {
+  font-size: 35px;
+}
+
+.contenedor_mascota--jugador {
   align-items: center;
+  display: flex;
+  height: 45vh;
+  justify-content: center;
 }
 
 .tarjeta-de-mokepon {
-  width: 100px;
-  height: 100px;
-  background: aquamarine;
-  padding: 10px;
+  align-items: center;
+  border-radius: 20px;
+  border: white solid 3px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
   margin: 10px;
-  border: 1px solid hotpink;
+  padding: 10px;
+  width: 250px;
+}
+.imagen-1 {
+  background-color: #c8e8ff;
 }
 
+.imagen-2 {
+  background-color: #fdfbcb;
+}
+.imagen-3 {
+  background-color: #fbe5fd;
+}
 input {
   display: none;
+}
+
+.contenedor__btn {
+  text-align: center;
+}
+.boton_mascota--seleccionar {
+  border-radius: 15px;
+  height: 50px;
+  padding: 10px;
+  width: 300px;
 }

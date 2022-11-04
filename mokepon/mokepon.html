@@ -4,27 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mokepon</title>
+    <title>Kawaiipon</title>
     <!--el punto representa que el archivo nuevo o el que buscamos esta en la misma carpeta  que este archivo-->
     <script src="./js/mokepon.js"></script>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <section id="seleccionar-mascota">
-      <h1 class="titulo">MOKEPON 🔥💧🌱</h1>
-      <h2>Elige a tu mascota:</h2>
+      <h1 class="titulo">KAWAIIPON 🔥💧🌱</h1>
+      <h2 class="subtitulo">Elige a tu mascota:</h2>
+      <div class="contenedor_mascota--jugador">
+        <!--en este input  debemos ponerle un atributo name para encapsularlo en un grupo "mascota"-->
+        <label class="tarjeta-de-mokepon imagen-1" for="hipodoge">
+          <p>Hipodoge</p>
+          <div class="contenedor_imagen">
+            <img
+              src="./assets/imagen/imagen-1.png"
+              alt="hipodogue"
+              width="250px"
+            />
+          </div>
+        </label>
+        <input type="radio" name="mascota" id="hipodoge" />
 
-      <!--en este input  debemos ponerle un atributo name para encapsularlo en un grupo "mascota"-->
-      <label class="tarjeta-de-mokepon" for="hipodoge">Hipodoge</label>
-      <input type="radio" name="mascota" id="hipodoge" />
+        <label class="tarjeta-de-mokepon imagen-2" for="capipepo">
+          <p>Capipepo</p>
+          <div class="contenedor_imagen">
+            <img
+              src="./assets/imagen/imagen-2.png"
+              alt="capipepo"
+              width="180px"
+            />
+          </div>
+        </label>
+        <input type="radio" name="mascota" id="capipepo" />
 
-      <label class="tarjeta-de-mokepon" for="capipepo">Capipepo</label>
-      <input type="radio" name="mascota" id="capipepo" />
-
-      <label class="tarjeta-de-mokepon" for="ratigueya">Ratigueya</label>
-      <input type="radio" name="mascota" id="ratigueya" />
-
-      <button id="boton-mascota">Seleccionar</button>
+        <label class="tarjeta-de-mokepon imagen-3" for="ratigueya">
+          <p>Ratigueya</p>
+          <div class="contenedor_imagen">
+            <img
+              src="./assets/imagen/imagen-3.com.png"
+              alt="ratigueya"
+              width="180px"
+            />
+          </div>
+        </label>
+        <input type="radio" name="mascota" id="ratigueya" />
+      </div>
+      <div class="contenedor__btn">
+        <button class="boton_mascota--seleccionar" id="boton-mascota">
+          Seleccionar
+        </button>
+      </div>
     </section>
 
     <section id="seleccionar-ataque">
