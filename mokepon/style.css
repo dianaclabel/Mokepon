@@ -9,6 +9,7 @@ body {
 
 .titulo,
 .subtitulo {
+  width: 100vw;
   padding: 20px;
   text-align: center;
 }
@@ -90,5 +91,31 @@ input {
   box-shadow: 2px 4px 10px 1px rgb(0 0 0 / 20%);
 }
 
+/*selccionar ataque*/
+#seleccionar-ataque {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn__ataque {
+  border-radius: 20px;
+  box-shadow: 2px 4px 10px 1px rgb(0 0 0 / 20%);
+  border: none;
+  box-sizing: border-box;
+  font-size: 25px;
+  font-family: "Amaranth", sans-serif;
+  color: #4a4444;
+  width: 250px;
+  height: 140px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.items-ataque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .footer {
 }

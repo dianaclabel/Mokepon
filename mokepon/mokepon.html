@@ -63,29 +63,58 @@
         </button>
       </div>
     </section>
-
+    <!--parte dos-->
     <section id="seleccionar-ataque">
       <h1 class="titulo">Kawaiipon</h1>
-      <h2>Elige tu ataque:</h2>
-
-      <p>
-        Tu mascota <span id="mascota-jugador"></span> tiene
-        <span id="vidas-jugador">3</span> vidas
-      </p>
-      <p>
-        La mascota <span id="mascota-enemigo"></span> del enemigo tiene
-        <span id="vidas-enemigo">3</span> vidas
-      </p>
-      <p>
-        <button id="boton-fuego">Fuego 🔥</button>
-        <button id="boton-agua">Agua 💧</button>
-        <button id="boton-tierra">Tierra 🌱</button>
-      </p>
-    </section>
-
-    <section id="mensajes"></section>
-    <section id="reiniciar">
-      <button id="boton-reiniciar">Reiniciar</button>
+      <h2 class="subtitulo">Elige tu ataque:</h2>
+      <div>
+        <button class="btn__ataque" id="boton-fuego">
+          <div class="items-ataque">
+            <p>Rayos de sol</p>
+            <img
+              src="./assets/imagen/sol.png"
+              width="100px"
+              alt="Rayos de sol"
+            />
+          </div>
+        </button>
+        <button class="btn__ataque" id="boton-agua">
+          <div class="items-ataque">
+            <p>gotas de lluvia</p>
+            <img
+              src="./assets/imagen/lluvia.png"
+              width="80px"
+              alt="imagen de gotas de lluvia"
+            />
+          </div>
+        </button>
+        <button class="btn__ataque" id="boton-tierra">
+          <div class="items-ataque">
+            <p>Tormenta de arena</p>
+            <img
+              src="./assets/imagen/arena.png"
+              width="100px"
+              alt="Tormenta de arena"
+            />
+          </div>
+        </button>
+      </div>
+      <div>
+        <section id="mensajes"></section>
+        <section id="reiniciar">
+          <button id="boton-reiniciar">Reiniciar</button>
+        </section>
+      </div>
+      <div>
+        <p>
+          Tu mascota <span id="mascota-jugador"></span> tiene
+          <span id="vidas-jugador">3</span> vidas
+        </p>
+        <p>
+          La mascota <span id="mascota-enemigo"></span> del enemigo tiene
+          <span id="vidas-enemigo">3</span> vidas
+        </p>
+      </div>
     </section>
     <!--el codigo basico se llma el andamio o el scaffolding-->
     <footer class="footer">
