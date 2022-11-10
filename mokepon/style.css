@@ -110,10 +110,34 @@ input {
   height: 140px;
   padding: 20px;
   margin: 10px;
+  background-color: #f1f5ff;
 }
 
 .items-ataque {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#mensajes {
+  font-family: "Amaranth", sans-serif;
+  font-size: 28px;
+  width: 30vw;
+  height: 150px;
+  background-color: #d9e5ff;
+  box-shadow: 2px 4px 10px 1px rgb(0 0 0 / 20%);
+  display: flex;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #4a4444;
+}
+
+#boton-reiniciar {
+  border: none;
+  color: #4a4444;
+  font-family: "Amaranth", sans-serif;
 }

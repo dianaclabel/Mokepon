@@ -149,12 +149,9 @@ function revisarVidas() {
 }
 
 function crearMensajeFinal(resultadoFinal) {
-  let sectionMensajes = document.getElementById("mensajes");
+  let sectionMensajes = document.getElementById("resultado");
 
-  let parrafo = document.createElement("p");
-  parrafo.innerHTML = resultadoFinal;
-
-  sectionMensajes.appendChild(parrafo);
+  sectionMensajes.innerHTML = resultadoFinal;
 
   //disabled hara que los botones no hagan la funcion se bloqueara y pondra los botones transparente
 
