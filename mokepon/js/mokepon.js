@@ -99,16 +99,19 @@ function ataqueEnemigoAleatorio() {
 }
 
 function crearMensaje(mensaje) {
-  let seccionMensaje = document.getElementById("mensajes");
-  let parrafo = document.createElement("P");
-  parrafo.innerHTML =
-    "Tu mascota atacó con " +
-    ataqueJugador +
-    ", la mascota del enemigo ataco con " +
-    ataqueEnemigo +
-    " " +
-    mensaje;
-  seccionMensaje.appendChild(parrafo);
+  let seccionMensaje = document.getElementById("resultado");
+  let ataqueDelJugador = document.getElementById("ataque-del-jugador");
+  let ataqueDelEnemigo = document.getElementById("ataque-del-enemigo");
+
+  let nuevoAtaqueDelJugador = document.createElement("P");
+  let nuevoAtaqueDelEnemigo = document.createElement("P");
+
+  seccionMensaje.innerHTML = mensaje;
+  nuevoAtaqueDelJugador.innerHTML = ataqueJugador;
+  nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo;
+
+  ataqueDelJugador.appendChild(nuevoAtaqueDelJugador);
+  ataqueDelEnemigo.appendChild(nuevoAtaqueDelEnemigo);
 }
 
 function combate(ataqueJugador, ataqueEnemigo) {
