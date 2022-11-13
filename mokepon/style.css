@@ -121,15 +121,15 @@ input {
 
 #mensajes {
   font-family: "Amaranth", sans-serif;
-  font-size: 28px;
+  font-size: 30px;
   width: 30vw;
   height: 150px;
-  background-color: #d9e5ff;
-  box-shadow: 2px 4px 10px 1px rgb(0 0 0 / 20%);
+  background-color: #faecf2;
+  border: 4px solid white;
   display: flex;
   padding: 20px;
   margin-top: 20px;
-  border-radius: 20px;
+  border-radius: 15px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -139,5 +139,40 @@ input {
 #boton-reiniciar {
   border: none;
   color: #4a4444;
+  font-size: 25px;
   font-family: "Amaranth", sans-serif;
+  margin-top: 20px;
+  padding: 10px;
+  width: 150px;
+  border-radius: 20px;
+  background-color: #f1f5ff;
+  box-shadow: 2px 4px 10px 1px rgb(0 0 0 / 20%);
+}
+.ataques {
+  margin: 2rem;
+  width: 40%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.contenedor-jugador {
+  grid-column: 1 / 2;
+}
+
+.contenedor-enemigo {
+  grid-column: 3/4;
+}
+
+.contenedor-jugador,
+.contenedor-enemigo {
+  font-family: "Amaranth", sans-serif;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f5ff;
+  border-radius: 15px;
+  padding: 20px;
+  opacity: 0.9;
 }
