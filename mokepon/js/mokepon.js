@@ -1,7 +1,7 @@
 let ataqueJugador;
 let ataqueEnemigo;
-let vidasJugador = 3;
-let vidasEnemigo = 3;
+let vidasJugador = ["💗", "💗", "💗"];
+let vidasEnemigo = ["💗", "💗", "💗"];
 
 function iniciarJuego() {
   let setcionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
@@ -31,10 +31,13 @@ function seleccionarMascotaJugador() {
 
   if (inputHipodoge.checked) {
     spanMascotaJugador.innerHTML = "Hipodoge";
+    agregarImagenJugador("./assets/imagen/imagen-2.png");
   } else if (inputCapipepo.checked) {
     spanMascotaJugador.innerHTML = "Capipepo";
+    agregarImagenJugador("./assets/imagen/imagen-3.com.png");
   } else if (inputRatigueya.checked) {
     spanMascotaJugador.innerHTML = "Ratigueya";
+    agregarImagenJugador("assets/imagen/imagen-1.png");
   } else {
     alert("Debe seleccionar una alternativa");
     seleccionHecha = false;
@@ -60,27 +63,46 @@ function seleccionarMascotaEnemigo() {
 
   if (mascotaAleatorio === 1) {
     spanMascotaEnemigo.innerHTML = "Hipodoge";
+    agregarImagenEnemigo("./assets/imagen/imagen-2.png");
   } else if (mascotaAleatorio === 2) {
     spanMascotaEnemigo.innerHTML = "Capipepo";
+    agregarImagenEnemigo("./assets/imagen/imagen-3.com.png");
   } else {
-    spanMascotaEnemigo.innerHTML = "ratigueya";
+    spanMascotaEnemigo.innerHTML = "Ratigueya";
+    agregarImagenEnemigo("assets/imagen/imagen-1.png");
   }
 }
 
+function agregarImagenJugador(nombreImagen) {
+  let contenedorImagen = document.getElementById("contenedor-imagen-jugador");
+  let imagen = document.createElement("img");
+  imagen.src = nombreImagen;
+  imagen.classList.add("imagen__seleccionado");
+  contenedorImagen.appendChild(imagen);
+}
+
+function agregarImagenEnemigo(nombreImagen) {
+  let contenedorImagen = document.getElementById("contenedor-imagen-enemigo");
+  let imagen = document.createElement("img");
+  imagen.src = nombreImagen;
+  imagen.classList.add("imagen__seleccionado");
+  contenedorImagen.appendChild(imagen);
+}
+
 function ataqueFuego() {
-  ataqueJugador = "Fuego";
+  ataqueJugador = "Rayos de sol 🌞";
 
   ataqueEnemigoAleatorio();
 }
 
 function ataqueAgua() {
-  ataqueJugador = "Agua";
+  ataqueJugador = "Gotas de lluvia 💦";
 
   ataqueEnemigoAleatorio();
 }
 
 function ataqueTierra() {
-  ataqueJugador = "Tierra";
+  ataqueJugador = "Tormenta de arena 🌪";
 
   ataqueEnemigoAleatorio();
 }
@@ -88,11 +110,11 @@ function ataqueTierra() {
 function ataqueEnemigoAleatorio() {
   let ataqueAleatorio = aleatorio(1, 3);
   if (ataqueAleatorio === 1) {
-    ataqueEnemigo = "Fuego";
+    ataqueEnemigo = "Rayos de sol 🌞";
   } else if (ataqueAleatorio === 2) {
-    ataqueEnemigo = "Agua";
+    ataqueEnemigo = "Gotas de lluvia 💦";
   } else {
-    ataqueEnemigo = "Tierra";
+    ataqueEnemigo = "Tormenta de arena 🌪";
   }
 
   combate(ataqueJugador, ataqueEnemigo);
@@ -120,30 +142,39 @@ function combate(ataqueJugador, ataqueEnemigo) {
 
   if (ataqueJugador === ataqueEnemigo) {
     crearMensaje("EMPATE");
-  } else if (ataqueJugador === "Fuego" && ataqueEnemigo === "Tierra") {
+  } else if (
+    ataqueJugador === "Rayos de sol 🌞" &&
+    ataqueEnemigo === "Tormenta de arena 🌪"
+  ) {
     crearMensaje("GANASTE");
-    vidasEnemigo--;
-    spanVidasEnemigo.innerHTML = vidasEnemigo;
-  } else if (ataqueJugador === "Agua" && ataqueEnemigo === "Fuego") {
+    vidasEnemigo.pop();
+    spanVidasEnemigo.innerHTML = vidasEnemigo.join(" ");
+  } else if (
+    ataqueJugador === "Gotas de lluvia 💦" &&
+    ataqueEnemigo === "Rayos de sol 🌞"
+  ) {
     crearMensaje("GANASTE");
-    vidasEnemigo--;
-    spanVidasEnemigo.innerHTML = vidasEnemigo;
-  } else if (ataqueJugador === "Tierra" && ataqueEnemigo === "Agua") {
+    vidasEnemigo.pop();
+    spanVidasEnemigo.innerHTML = vidasEnemigo.join(" ");
+  } else if (
+    ataqueJugador === "Tormenta de arena 🌪" &&
+    ataqueEnemigo === "Gotas de lluvia 💦"
+  ) {
     crearMensaje("GANASTE");
-    vidasEnemigo--;
-    spanVidasEnemigo.innerHTML = vidasEnemigo;
+    vidasEnemigo.pop();
+    spanVidasEnemigo.innerHTML = vidasEnemigo.join(" ");
   } else {
     crearMensaje("PERDISTE");
-    vidasJugador--;
-    spanVidasJugador.innerHTML = vidasJugador;
+    vidasJugador.pop();
+    spanVidasJugador.innerHTML = vidasJugador.join(" ");
   }
   revisarVidas();
 }
 
 function revisarVidas() {
-  if (vidasEnemigo == 0) {
+  if (vidasEnemigo.length == 0) {
     crearMensajeFinal("FELICITACIONES! Ganaste :)");
-  } else if (vidasJugador == 0) {
+  } else if (vidasJugador.length == 0) {
     crearMensajeFinal("Lo siento, perdiste :(");
   }
 }

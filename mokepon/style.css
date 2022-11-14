@@ -150,9 +150,9 @@ input {
 }
 .ataques {
   margin: 2rem;
-  width: 40%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
 }
 
 .contenedor-jugador {
@@ -160,11 +160,12 @@ input {
 }
 
 .contenedor-enemigo {
-  grid-column: 3/4;
+  grid-column: 2/3;
 }
 
 .contenedor-jugador,
 .contenedor-enemigo {
+  width: 300px;
   font-family: "Amaranth", sans-serif;
   font-size: 20px;
   display: flex;
@@ -175,4 +176,29 @@ input {
   border-radius: 15px;
   padding: 20px;
   opacity: 0.9;
+  margin: 20px;
+  box-shadow: 2px 4px 10px 1px rgb(0 0 0 / 20%);
+}
+
+.contenedor-imagen__seleccionado {
+  width: 250px;
+  height: 250px;
+  background-image: linear-gradient(
+    -225deg,
+    rgb(204 233 255) 0%,
+    rgb(245 218 251) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.imagen__seleccionado {
+  width: 150px;
+}
+
+.titulo-mascota__selecionado {
+  font-size: 25px;
 }
