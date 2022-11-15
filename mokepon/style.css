@@ -5,6 +5,7 @@
 }
 body {
   background-image: url("./assets/imagen/fondo-kwai.jpg");
+  width: 100vw;
 }
 
 .titulo,
@@ -52,6 +53,10 @@ body {
   margin: 10px;
   padding: 10px;
   width: 250px;
+}
+
+.contenedor_imagen img {
+  width: 180px;
 }
 .imagen-1 {
   background-color: #ddf4ff;
@@ -122,7 +127,7 @@ input {
 #mensajes {
   font-family: "Amaranth", sans-serif;
   font-size: 30px;
-  width: 30vw;
+  width: 500px;
   height: 150px;
   background-color: #faecf2;
   border: 4px solid white;
@@ -183,16 +188,13 @@ input {
 .contenedor-imagen__seleccionado {
   width: 250px;
   height: 250px;
-  background-image: linear-gradient(
-    -225deg,
-    rgb(204 233 255) 0%,
-    rgb(245 218 251) 100%
-  );
+  background-color: #faecf2;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 20px;
+  box-shadow: 2px 4px 10px 1px rgb(0 0 0 / 20%);
 }
 
 .imagen__seleccionado {
@@ -201,4 +203,74 @@ input {
 
 .titulo-mascota__selecionado {
   font-size: 25px;
+}
+
+.vidas-jugador,
+.vidas-enemigo {
+  width: 100%;
+  margin: 10px;
+  text-align: center;
+}
+
+.footer {
+  background-color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  padding: 5px;
+  align-items: center;
+  font-size: 18px;
+  font-family: "Amaranth", sans-serif;
+  color: rgb(98, 95, 95);
+}
+
+.footer .redes-sociales {
+  display: flex;
+  list-style: none;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.footer .image {
+  width: 60px;
+}
+
+@media screen and (max-width: 390px) {
+  .titulo {
+    font-size: 60px;
+    background-size: 320px;
+    padding-top: 55px;
+  }
+
+  .subtitulo {
+    font-size: 36px;
+    padding: 10px;
+  }
+
+  .contenedor_mascota--jugador {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .tarjeta-de-mokepon {
+    height: 250px;
+    width: 220px;
+  }
+
+  .contenedor_imagen img {
+    width: 130px;
+  }
+
+  .boton_mascota--seleccionar {
+    width: 230px;
+    border-radius: 10px;
+    margin: 20px;
+    font-size: 23px;
+  }
+  .footer {
+    display: none;
+  }
 }

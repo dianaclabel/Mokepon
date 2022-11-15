@@ -53,6 +53,9 @@ function seleccionarMascotaJugador() {
       document.getElementById("seleccionar-ataque");
     setcionSeleccionarAtaque.style.display = "flex";
 
+    let setcionFooter = document.getElementById("footer");
+    setcionFooter.style.position = "sticky";
+
     seleccionarMascotaEnemigo();
   }
 }
@@ -146,25 +149,25 @@ function combate(ataqueJugador, ataqueEnemigo) {
     ataqueJugador === "Rayos de sol 🌞" &&
     ataqueEnemigo === "Tormenta de arena 🌪"
   ) {
-    crearMensaje("GANASTE");
+    crearMensaje("GANASTE😃");
     vidasEnemigo.pop();
     spanVidasEnemigo.innerHTML = vidasEnemigo.join(" ");
   } else if (
     ataqueJugador === "Gotas de lluvia 💦" &&
     ataqueEnemigo === "Rayos de sol 🌞"
   ) {
-    crearMensaje("GANASTE");
+    crearMensaje("GANASTE😃");
     vidasEnemigo.pop();
     spanVidasEnemigo.innerHTML = vidasEnemigo.join(" ");
   } else if (
     ataqueJugador === "Tormenta de arena 🌪" &&
     ataqueEnemigo === "Gotas de lluvia 💦"
   ) {
-    crearMensaje("GANASTE");
+    crearMensaje("GANASTE😃");
     vidasEnemigo.pop();
     spanVidasEnemigo.innerHTML = vidasEnemigo.join(" ");
   } else {
-    crearMensaje("PERDISTE");
+    crearMensaje("PERDISTE😣");
     vidasJugador.pop();
     spanVidasJugador.innerHTML = vidasJugador.join(" ");
   }
@@ -173,9 +176,9 @@ function combate(ataqueJugador, ataqueEnemigo) {
 
 function revisarVidas() {
   if (vidasEnemigo.length == 0) {
-    crearMensajeFinal("FELICITACIONES! Ganaste :)");
+    crearMensajeFinal("¡FELICITACIONES GANASTE🎉!");
   } else if (vidasJugador.length == 0) {
-    crearMensajeFinal("Lo siento, perdiste :(");
+    crearMensajeFinal("Lo siento, perdiste 😥");
   }
 }
 
