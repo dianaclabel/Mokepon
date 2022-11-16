@@ -55,6 +55,10 @@ body {
   width: 250px;
 }
 
+.tarjeta-de-mokepon:hover {
+  opacity: 0.7;
+}
+
 .contenedor_imagen img {
   width: 180px;
 }
@@ -94,6 +98,7 @@ input {
   background-color: #fbfeff;
   border: none;
   box-shadow: 2px 4px 10px 1px rgb(0 0 0 / 20%);
+  cursor: pointer;
 }
 
 /*selccionar ataque*/
@@ -116,8 +121,11 @@ input {
   padding: 20px;
   margin: 10px;
   background-color: #f1f5ff;
+  cursor: pointer;
 }
-
+.btn__ataque:hover {
+  opacity: 0.7;
+}
 .items-ataque {
   display: flex;
   align-items: center;
@@ -230,7 +238,7 @@ input {
 .footer .redes-sociales {
   display: flex;
   list-style: none;
-  padding: 5px;
+  padding: 10px;
   margin-left: 10px;
 }
 
@@ -269,6 +277,47 @@ input {
     border-radius: 10px;
     margin: 20px;
     font-size: 23px;
+  }
+  .btn__ataque {
+    display: block;
+    width: 280px;
+    padding: 8px;
+    margin: 18px;
+  }
+
+  #mensajes {
+    width: 320px;
+    font-size: 23px;
+    height: 130px;
+  }
+
+  #boton-reiniciar {
+    font-size: 20px;
+  }
+
+  .ataques {
+    margin-top: 10px;
+    gap: 0;
+  }
+
+  .contenedor-jugador,
+  .contenedor-enemigo {
+    width: 155px;
+    margin: 10px;
+    padding: 13px;
+    font-size: 14px;
+  }
+  .titulo-mascota__selecionado {
+    font-size: 22px;
+  }
+
+  .contenedor-imagen__seleccionado {
+    width: 130px;
+    height: 130px;
+  }
+
+  .imagen__seleccionado {
+    width: 80px;
   }
   .footer {
     display: none;

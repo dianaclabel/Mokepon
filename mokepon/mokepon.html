@@ -11,8 +11,6 @@
       rel="stylesheet"
     />
     <title>Kawaiipon</title>
-    <!--el punto representa que el archivo nuevo o el que buscamos esta en la misma carpeta  que este archivo-->
-    <script src="./js/mokepon.js"></script>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -21,22 +19,23 @@
       <h2 class="subtitulo">Elige a tu mascota:</h2>
       <div class="contenedor_mascota--jugador">
         <!--en este input  debemos ponerle un atributo name para encapsularlo en un grupo "mascota"-->
+        <input type="radio" name="mascota" id="hipodoge" />
         <label class="tarjeta-de-mokepon imagen-1" for="hipodoge">
           <p class="titulo-tarjeta">Hipodoge</p>
           <div class="contenedor_imagen">
             <img src="./assets/imagen/imagen-2.png" alt="hipodogue" />
           </div>
         </label>
-        <input type="radio" name="mascota" id="hipodoge" />
 
+        <input type="radio" name="mascota" id="capipepo" />
         <label class="tarjeta-de-mokepon imagen-2" for="capipepo">
           <p class="titulo-tarjeta">Capipepo</p>
           <div class="contenedor_imagen">
             <img src="./assets/imagen/imagen-3.com.png" alt="capipepo" />
           </div>
         </label>
-        <input type="radio" name="mascota" id="capipepo" />
 
+        <input type="radio" name="mascota" id="ratigueya" />
         <label class="tarjeta-de-mokepon imagen-3" for="ratigueya">
           <p class="titulo-tarjeta">Ratigueya</p>
           <div class="contenedor_imagen">
@@ -140,5 +139,7 @@
         </li>
       </ul>
     </footer>
+    <!--el punto representa que el archivo nuevo o el que buscamos esta en la misma carpeta  que este archivo-->
+    <script src="./js/mokepon.js"></script>
   </body>
 </html>

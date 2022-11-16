@@ -176,7 +176,7 @@ function combate(ataqueJugador, ataqueEnemigo) {
 
 function revisarVidas() {
   if (vidasEnemigo.length == 0) {
-    crearMensajeFinal("¡FELICITACIONES GANASTE🎉!");
+    crearMensajeFinal("¡Felicitaciones, ganaste🎉!");
   } else if (vidasJugador.length == 0) {
     crearMensajeFinal("Lo siento, perdiste 😥");
   }
@@ -184,6 +184,12 @@ function revisarVidas() {
 
 function crearMensajeFinal(resultadoFinal) {
   let sectionMensajes = document.getElementById("resultado");
+
+  if (resultadoFinal === "¡Felicitaciones, ganaste🎉!") {
+    sectionMensajes.style.color = "green";
+  } else {
+    sectionMensajes.style.color = "red";
+  }
 
   sectionMensajes.innerHTML = resultadoFinal;
 
